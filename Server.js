@@ -13,12 +13,20 @@ app.use(cors({
 app.use(express.json());
 
 // MySQL connection
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'root@123',
+//   database: 'fashion_store'
+// });
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root@123',
-  database: 'fashion_store'
+  host: 'dpg-d11b0215pdvs73eq0fd0-a',
+  user: 'mysql_12oo_user',
+  password: 'QpmT18VWPpVhqvzZg96I7DTcs6I8fvgT',
+  database: 'mysql_12oo',
+  port: process.env.DB_PORT || 5432
 });
+
 
 db.connect(err => {
   if (err) throw err;
