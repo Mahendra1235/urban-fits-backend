@@ -24,7 +24,7 @@ const db = mysql.createConnection({
   user: 'mysql_12oo_user',
   password: 'QpmT18VWPpVhqvzZg96I7DTcs6I8fvgT',
   database: 'mysql_12oo',
-  port: process.env.DB_PORT || 5432
+  port:  5432
 });
 
 
