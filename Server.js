@@ -3,30 +3,24 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const app = express();
 
-// CORS configuration
-app.use(cors({
-  origin: ['http://localhost:3000', 'https://urban-fits.vercel.app'],
-  methods: ['GET', 'POST'],
-  credentials: true
-}));
+// // CORS configuration
+// app.use(cors({
+//   origin: ['http://localhost:3000', 'https://urban-fits.vercel.app'],
+//   methods: ['GET', 'POST'],
+//   credentials: true
+// }));
+
+app.use(cors());
 
 app.use(express.json());
 
 // MySQL connection
-// const db = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'root@123',
-//   database: 'fashion_store'
-// });
 const db = mysql.createConnection({
-  host: 'dpg-d11b0215pdvs73eq0fd0-a',
-  user: 'mysql_12oo_user',
-  password: 'QpmT18VWPpVhqvzZg96I7DTcs6I8fvgT',
-  database: 'mysql_12oo',
-  port: process.env.DB_PORT || 5432
+  host: 'localhost',
+  user: 'root',
+  password: 'root@123',
+  database: 'fashion_store'
 });
-
 
 db.connect(err => {
   if (err) throw err;
